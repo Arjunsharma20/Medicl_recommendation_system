@@ -39,9 +39,9 @@ This project demonstrates the application of ML in healthcare for **early diseas
 ## 🖼️ Screenshots  
 
 ### Symptom Input Form  
-![Symptom Form](Screenshot 2025-09-04 142916.png)
+![Symptom Form](symptom_form.png)
 
 ### Disease Prediction Result  
-![Prediction Result](screenshot/prediction_result.png)
+![Prediction Result](prediction_result.png)
 
 ---
