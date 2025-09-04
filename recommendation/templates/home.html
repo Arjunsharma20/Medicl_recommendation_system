@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Recommendation System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #c9ffbf, #ffafbd);
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .navbar {
+      background: linear-gradient(45deg, #007bff, #0056b3);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 20px;
+      color: #fff !important;
+    }
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+      margin: 0 8px;
+      transition: 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ffe082 !important;
+      transform: scale(1.05);
+    }
+    .home-card {
+      text-align: center;
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      max-width: 600px;
+      margin: auto;
+      margin-top: 60px;
+      animation: fadeInDown 1s ease;
+    }
+    h2 {
+      color: #2c3e50;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+    .btn-dashboard {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 12px;
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-patient {
+      background: linear-gradient(45deg, #28a745, #218838);
+    }
+    .btn-doctor {
+      background: linear-gradient(45deg, #ff5722, #e64a19);
+    }
+    .btn-dashboard:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      text-decoration: none;
+      color: #fff;
+    }
+    .icon-img {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">🏥 MedRecoSys</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'patient_dashboard' %}">Patient Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'doctor_dashboard' %}">Doctor Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'developer' %}">Developer</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ Home Card -->
+  <div class="home-card animate__animated animate__zoomIn">
+    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966485.png" alt="Medical Icon" class="icon-img">
+    <h2>Welcome to Medical Recommendation System</h2>
+    <p class="mb-4 text-muted">Choose your dashboard to continue</p>
+
+    <a href="{% url 'patient_dashboard' %}" class="btn-dashboard btn-patient">👤 Patient Dashboard</a>
+    <a href="{% url 'doctor_dashboard' %}" class="btn-dashboard btn-doctor">👨‍⚕️ Doctor Dashboard</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
