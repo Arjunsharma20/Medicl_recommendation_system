@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Search Results for: <span class="text-primary">{{ query }}</span></h2>
+
+    {% if message %}
+        <div class="alert alert-warning text-center">{{ message }}</div>
+    {% endif %}
+
+    {% if results %}
+        <!-- Disease Section -->
+        <div class="card mb-4 border-danger shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title text-danger">Disease: {{ results.predicted_disease }}</h3>
+                <p class="card-text"><strong>Description:</strong> {{ results.dis_des }}</p>
+            </div>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="row g-4">
+            <!-- Precautions -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-dark bg-warning">
+                    <div class="card-header">Precautions</div>
+                    <ul class="list-group list-group-flush">
+                        {% for item in results.my_precautions %}
+                            <li class="list-group-item bg-warning">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Medications -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-white bg-danger">
+                    <div class="card-header">Medications</div>
+                    <ul class="list-group list-group-flush">
+                        {% for item in results.medications %}
+                            <li class="list-group-item bg-danger text-white">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Diets -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-white bg-success">
+                    <div class="card-header">Diets</div>
+                    <ul class="list-group list-group-flush">
+                        {% for item in results.my_diet %}
+                            <li class="list-group-item bg-success text-white">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Workouts -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 text-white bg-info">
+                    <div class="card-header text-dark">Workouts</div>
+                    <ul class="list-group list-group-flush">
+                        {% for item in results.workout %}
+                            <li class="list-group-item bg-info text-white">{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="alert alert-info mt-3 text-center">No results found for your query.</div>
+    {% endif %}
+</div>
+{% endblock %}

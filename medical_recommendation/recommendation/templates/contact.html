@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Medical Health Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #00ffcc;
+      }
+      h4 {
+        font-weight: 600;
+        margin-top: 15px;
+        color: #00ffcc;
+      }
+      .contact-card {
+        background-color: rgba(26, 26, 26, 0.9);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        border: 1px solid #333;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      .contact-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
+      }
+      a {
+        color: #00ccff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #00ffcc;
+        text-decoration: underline;
+      }
+      .form-control, .btn {
+        border-radius: 10px;
+      }
+      .btn-primary {
+        background: linear-gradient(90deg, #00ccff, #00ffcc);
+        border: none;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .btn-primary:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+      }
+      .social-icons a {
+        font-size: 25px;
+        margin: 0 10px;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+      .social-icons a:hover {
+        transform: scale(1.2);
+        color: #00ffcc;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+
+      <h1 class="text-center mb-5"><i class="bi bi-telephone"></i> Contact Us</h1>
+
+      <!-- General Contact -->
+      <div class="contact-card">
+        <h4><i class="bi bi-chat-dots"></i> Have Questions?</h4>
+        <p>We are here to assist you with any questions or concerns. Your health and satisfaction are our top priorities.</p>
+      </div>
+
+      <!-- Customer Support -->
+      <div class="contact-card">
+        <h4><i class="bi bi-headset"></i> Customer Support</h4>
+        <p>Our dedicated support team is available to help with inquiries, feedback, or technical assistance. Reach out anytime and we’ll respond promptly.</p>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-card">
+        <h4><i class="bi bi-envelope"></i> Get in Touch</h4>
+        <p><strong>Email:</strong> arjunsharma132629.com</p>
+        <p><strong>Phone:</strong> +91 8950499446</p>
+        <p><strong>Address:</strong> Jagadhri, Haryana, India</p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="contact-card text-center">
+        <h4><i class="bi bi-share"></i> Stay Connected</h4>
+        <p>Follow us on social media to get the latest updates, health tips, and news.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/arjun_s020" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/arjun-sharma-a5540a293" target="_blank"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <!-- Contact Form -->
+<div class="contact-card">
+  <h4><i class="bi bi-pencil-square"></i> Send Us a Message</h4>
+
+  <!-- Show Success / Error Messages -->
+  {% if success %}
+    <div class="alert alert-success">✅ Your message has been sent successfully!</div>
+  {% elif error %}
+    <div class="alert alert-danger">❌ {{ error }}</div>
+  {% endif %}
+
+  <form method="POST" action="{% url 'contact' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+  </form>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

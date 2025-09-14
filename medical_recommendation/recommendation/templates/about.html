@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us - Medical Health Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      h4 {
+        font-weight: 600;
+        margin-top: 15px;
+        color: #00ffcc;
+      }
+      .about-card {
+        background-color: rgba(26, 26, 26, 0.9);
+        border-radius: 15px;
+        padding: 25px;
+        margin-bottom: 25px;
+        border: 1px solid #333;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      .about-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
+      }
+      .about-card i {
+        font-size: 35px;
+        color: #00ffcc;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+
+      <h1 class="text-center mb-5" style="color:#00ffcc;">About Us</h1>
+
+      <div class="about-card">
+        <i class="bi bi-hospital"></i>
+        <h4>Welcome to Medical Health Center</h4>
+        <p>Where health meets technology for a brighter, healthier future. Our platform empowers individuals with knowledge and tools to take control of their health.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-eye"></i>
+        <h4>Our Vision</h4>
+        <p>We envision a world where access to healthcare information is a fundamental right. Our mission is to empower individuals with the knowledge to make informed decisions about their health.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-people"></i>
+        <h4>Who We Are</h4>
+        <p>We are a passionate team of healthcare professionals, data scientists, and technology enthusiasts. Combining expertise in healthcare and technology, we strive to make healthcare accessible, understandable, and personalized.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-bullseye"></i>
+        <h4>Our Mission</h4>
+        <p>Our mission is to provide a seamless platform leveraging AI and machine learning to assist users in identifying potential health concerns, while offering a wealth of educational resources to enhance health literacy.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-cpu"></i>
+        <h4>How We Do It</h4>
+        <p>We utilize a robust machine learning model trained on a vast dataset of symptoms and diseases. Users input symptoms, and our system predicts potential illnesses with accurate information about precautions, medications, diets, and workouts.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-heart-pulse"></i>
+        <h4>Your Well-being, Our Priority</h4>
+        <p>We prioritize your health by providing accurate predictions and comprehensive information about each disease. Our platform is designed to support your journey toward better health.</p>
+      </div>
+
+      <div class="about-card">
+        <i class="bi bi-globe"></i>
+        <h4>Join Us on This Journey</h4>
+        <p>Explore our platform, engage with our educational content, and take control of your health. Together, we can revolutionize access to healthcare information and empower individuals to live healthier lives.</p>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
