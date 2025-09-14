@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Medical Health Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #00ffcc;
+      }
+      h2, h3 {
+        color: #00ffcc;
+        margin-top: 15px;
+      }
+      .blog-card {
+        background-color: rgba(26, 26, 26, 0.9);
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        border: 1px solid #333;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s forwards;
+      }
+      .blog-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0, 255, 204, 0.4);
+      }
+      .blog-card i {
+        font-size: 35px;
+        color: #00ffcc;
+        margin-bottom: 10px;
+      }
+      ol li, ul li {
+        margin-bottom: 8px;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+
+      <h1 class="text-center mb-5"><i class="bi bi-journal-text"></i> Blog</h1>
+
+      <div class="blog-card">
+        <i class="bi bi-cpu"></i>
+        <h2>Building a Symptom-Based Disease Diagnosis Web App with Django and Machine Learning</h2>
+        <p>In today’s world, access to accurate healthcare information is more important than ever. We created a symptom-based disease diagnosis web app using Django and a Decision Tree Classifier model. It helps users identify potential illnesses based on reported symptoms.</p>
+
+        <h3><i class="bi bi-exclamation-circle"></i> The Problem</h3>
+        <p>People often experience symptoms and want quick answers. Differentiating between diseases with overlapping symptoms is challenging. Our goal was to provide a convenient, accurate solution.</p>
+
+        <h3><i class="bi bi-lightbulb"></i> The Solution</h3>
+        <ol>
+          <li><b>Symptom Input:</b> Users enter their symptoms through an easy interface.</li>
+          <li><b>Machine Learning Model:</b> A Support Vector Classifier predicts diseases based on input symptoms.</li>
+          <li><b>Prediction:</b> The app predicts the most likely disease instantly.</li>
+          <li><b>Additional Information:</b> Provides description, precautions, medications, diet, and workout tips.</li>
+        </ol>
+
+        <h3><i class="bi bi-star"></i> Key Features</h3>
+        <ul>
+          <li><b>User-Friendly Interface:</b> Easy and intuitive for users to input symptoms.</li>
+          <li><b>Accurate Predictions:</b> Machine learning ensures precise disease predictions.</li>
+          <li><b>Comprehensive Information:</b> Includes descriptions, precautions, medications, diet, and workouts.</li>
+          <li><b>Educational Content:</b> Informative articles to empower users with healthcare knowledge.</li>
+        </ul>
+
+        <h3><i class="bi bi-check-circle"></i> Conclusion</h3>
+        <p>This web app combines healthcare and technology to make healthcare more accessible and user-centric. Users can quickly gain insights into their health, make informed decisions, and improve overall well-being.</p>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
